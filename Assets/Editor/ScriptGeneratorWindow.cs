@@ -21,6 +21,15 @@ public class #SCRIPTNAME# : MonoBehaviour
     }
 }";
 
+    private string _scriptableObjectTemplate =
+@"using UnityEngine;
+
+public class #SCRIPTNAME# : ScriptableObject
+{
+Å@Å@//ì˙ñ{åÍ
+
+}";
+
     private string _classTemplate =
 @"using UnityEngine;
 
@@ -45,6 +54,7 @@ public interface #SCRIPTNAME#
     public enum SelectTemplates
     {
         MonoBehaviour,
+        ScriptableObject,
         Class,
         Interface,
     }
@@ -75,6 +85,9 @@ public interface #SCRIPTNAME#
         {
             case SelectTemplates.MonoBehaviour:
                 template = _monoBehaviourTemplate;
+                break;
+            case SelectTemplates.ScriptableObject:
+                template = _scriptableObjectTemplate;
                 break;
             case SelectTemplates.Class:
                 template = _classTemplate;
