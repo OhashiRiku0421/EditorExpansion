@@ -7,7 +7,7 @@ public abstract class Node : ScriptableObject
     { 
         Running,
         Failure,
-        Success
+        Success,
     }
 
     private NodeState _state = NodeState.Running;
