@@ -1,11 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu()]
 public class BehaviourTree : ScriptableObject
 {
     private Node _rootNode;
 
-    public Node RootNode => _rootNode;
+    public Node RootNode { get => _rootNode; set => _rootNode = value; }
 
     private Node.NodeState _treeNode = Node.NodeState.Running;
 
@@ -13,7 +13,12 @@ public class BehaviourTree : ScriptableObject
 
     public Node.NodeState Update()
     {
-        return _rootNode.Update();
+        if(_rootNode.State == Node.NodeState.Running)
+        {
+            _treeNode = _rootNode.Update();
+        }
+
+        return _treeNode;
     }
 
 }
