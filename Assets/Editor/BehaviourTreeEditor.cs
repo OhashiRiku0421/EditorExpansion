@@ -22,7 +22,7 @@ public class BehaviourTreeEditor : EditorWindow
 
 
         var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/BehaviourTreeEditor.uxml");
-        visualTree.CloneTree();
+        visualTree.CloneTree(root);
 
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/BehaviourTreeEditor.uss");
         root.styleSheets.Add(styleSheet);

@@ -1,4 +1,16 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/Editor/BehaviourTreeEditor.uss?fileID=7433441132597879392&amp;guid=013134922dc26604c9825b2cf7fcd0ec&amp;type=3#BehaviourTreeEditor" />
-    <BehaviourTreeView focusable="true" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/BehaviourTreeEditor.uss?fileID=7433441132597879392&amp;guid=3d0645ffc4faea04c8e2575e9495cddf&amp;type=3#BehaviourTreeEditor" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu display-tooltip-when-elided="true" text="Aseets" />
+    </uie:Toolbar>
+    <SplitView fixed-pane-initial-dimension="155" style="width: auto; flex-direction: column; height: 713px; align-items: stretch; justify-content: flex-start; flex-basis: auto;">
+        <ui:VisualElement name="LeftPanel" style="height: auto; width: auto;">
+            <ui:Label text="Inspector" display-tooltip-when-elided="true" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-color: rgb(29, 29, 29);" />
+            <InspectorView />
+        </ui:VisualElement>
+        <ui:VisualElement name="RightPAnel" style="width: auto; flex-shrink: 0; flex-basis: auto; height: auto; flex-grow: 0; align-items: stretch;">
+            <ui:Label text="TreeView" display-tooltip-when-elided="true" style="background-color: rgb(31, 31, 31);" />
+            <BehaviourTreeView focusable="true" style="flex-grow: 1; width: auto; height: auto; flex-direction: column; opacity: 1; flex-shrink: 1; flex-wrap: nowrap; max-width: none;" />
+        </ui:VisualElement>
+    </SplitView>
 </ui:UXML>
