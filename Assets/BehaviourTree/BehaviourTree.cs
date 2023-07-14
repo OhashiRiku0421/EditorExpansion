@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 [CreateAssetMenu()]
 public class BehaviourTree : ScriptableObject
@@ -11,6 +13,8 @@ public class BehaviourTree : ScriptableObject
 
     public Node.NodeState TreeNode => _treeNode;
 
+    private List<Node> _nodes = new List<Node>();
+
     public Node.NodeState Update()
     {
         if(_rootNode.State == Node.NodeState.Running)
@@ -19,6 +23,16 @@ public class BehaviourTree : ScriptableObject
         }
 
         return _treeNode;
+    }
+
+    public Node CreateNode(Type type)
+    {
+
+    }
+
+    public void DeleteNode(Node node)
+    {
+
     }
 
 }
